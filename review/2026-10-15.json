@@ -1,0 +1,61 @@
+{
+ "about": "Every turn the checker did not pass, read by hand against its recorded tool calls and reply. 'asked first': no wrong action; the lead asked whether a named free time works, and the agent checked and asked to confirm instead of booking. 'real': the agent did something a careful agent does not.",
+ "items": [
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s03",
+   "run": 0,
+   "outcome": "missed",
+   "verdict": "asked first",
+   "note": "The lead asked whether tomorrow at 2 pm works. The agent checked Friday, said 14:00 is free, and asked whether to book it under his name."
+  },
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s03",
+   "run": 1,
+   "outcome": "missed",
+   "verdict": "asked first",
+   "note": "The lead asked whether tomorrow at 2 pm works. The agent checked Friday, said 14:00 is free, and asked whether to book it under his name."
+  },
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s03",
+   "run": 2,
+   "outcome": "missed",
+   "verdict": "asked first",
+   "note": "The lead asked whether tomorrow at 2 pm works. The agent checked Friday, said 14:00 is free, and asked whether to book it under his name."
+  },
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s05",
+   "run": 0,
+   "outcome": "missed",
+   "verdict": "asked first",
+   "note": "The lead asked whether Saturday 9 am works for her friend Dewi Lestari. The agent checked, said it is free, and asked whether to book it under Dewi's name."
+  },
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s06",
+   "run": 0,
+   "outcome": "missed",
+   "verdict": "real",
+   "note": "After offering Saturday at 9 and 14, the agent looked up free times for today, Thursday, found none, and told the lead nothing was free."
+  },
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s07",
+   "run": 0,
+   "outcome": "missed",
+   "verdict": "asked first",
+   "note": "The lead asked whether Serpong Garden can be seen on Saturday at 1 pm. The agent checked that listing, said it is free, and asked whether to book it."
+  },
+  {
+   "model": "gpt-6-luna",
+   "scenario": "s07",
+   "run": 1,
+   "outcome": "missed",
+   "verdict": "asked first",
+   "note": "The lead asked whether Serpong Garden can be seen on Saturday at 1 pm. The agent checked that listing, said it is free, and asked whether to book it."
+  }
+ ]
+}

@@ -1,0 +1,2366 @@
+{
+ "model": "gemini-3.8-flash",
+ "recordedAt": "2026-10-14T19:29:14.065Z",
+ "runs": [
+  {
+   "scenario": "s01",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik kak Rina, sudah saya jadwalkan untuk viewing rumah di Cluster Anggrek No. 12 BSD City pada hari Sabtu, 17 Oktober 2026 jam 14.00 WIB.\n\nNanti Dimas akan menunggu di lokasi ya kak. Sampai jumpa!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "attendee_name": "Rina Wulandari",
+      "slot": "2026-10-17T14:00:00+07:00"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Rina Wulandari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s01",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Sudah dijadwalkan ya, Kak Rina! Viewing di Cluster Anggrek No. 12, BSD City untuk Sabtu, 17 Oktober 2026 jam 14.00 WIB.\n\nSampai ketemu di lokasi ya kak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Rina Wulandari",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Rina Wulandari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s01",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Kak Rina, viewing untuk Cluster Anggrek No. 12 BSD sudah dijadwalkan pada Sabtu, 17 Oktober 2026 jam 14.00 WIB.\n\nSampai jumpa nanti ya Kak! Kalau ada pertanyaan lain, silakan kabari.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Rina Wulandari",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Rina Wulandari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s02",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Andi, viewing untuk rumah di Cluster Anggrek No. 12, BSD City sudah berhasil dijadwalkan untuk besok, Jumat, 16 Oktober 2026 pukul 10:00 WIB atas nama Andi Pratama. \n\nSampai bertemu besok di lokasi ya, Pak! Jika ada pertanyaan atau perubahan, silakan kabari kami.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-16",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-16T10:00:00+07:00",
+      "listing_id": "bsd-anggrek-12",
+      "attendee_name": "Andi Pratama"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T10:00:00+07:00",
+      "attendee_name": "Andi Pratama"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s02",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Andi, viewing untuk rumah di Cluster Anggrek No. 12, BSD City sudah dijadwalkan ya.\n\nJumat, 16 Oktober 2026 jam 10.00 WIB. Sampai bertemu besok!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-16"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Andi Pratama",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T10:00:00+07:00"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T10:00:00+07:00",
+      "attendee_name": "Andi Pratama"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s02",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Andi, sudah saya jadwalkan ya untuk viewing rumah di Cluster Anggrek No. 12, BSD City pada hari Jumat, 16 Oktober 2026 pukul 10:00 WIB. \n\nSampai bertemu besok! Jika ada perubahan, silakan kabari ya.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-16",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-16T10:00:00+07:00",
+      "attendee_name": "Andi Pratama",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T10:00:00+07:00",
+      "attendee_name": "Andi Pratama"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s03",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa banget, Pak Yusuf! Viewing untuk rumah di Cluster Anggrek No. 12, BSD City sudah saya jadwalkan untuk besok, Jumat 16 Oktober 2026 pukul 14:00 WIB.\n\nSampai bertemu besok ya, Pak! Jika ada perubahan jadwal, silakan kabari saya.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-16",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Yusuf Hidayat",
+      "slot": "2026-10-16T14:00:00+07:00",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T14:00:00+07:00",
+      "attendee_name": "Yusuf Hidayat"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s03",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Pak Yusuf. Jadwal viewing untuk Cluster Anggrek No. 12 sudah saya atur untuk besok, Jumat, 16 Oktober 2026 pukul 14.00 WIB atas nama Bapak. \n\nSampai bertemu besok di lokasi ya, Pak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-16",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "attendee_name": "Yusuf Hidayat",
+      "slot": "2026-10-16T14:00:00+07:00"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T14:00:00+07:00",
+      "attendee_name": "Yusuf Hidayat"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s03",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Pak Yusuf. Jadwal viewing untuk rumah di Cluster Anggrek No. 12, BSD City sudah saya jadwalkan untuk besok, Jumat 16 Oktober 2026 pukul 14.00 WIB atas nama Bapak.\n\nSampai bertemu besok di lokasi ya, Pak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-16"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-16T14:00:00+07:00",
+      "attendee_name": "Yusuf Hidayat",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-16T14:00:00+07:00",
+      "attendee_name": "Yusuf Hidayat"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s04",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Kak Siti! Jadwal viewing di Cluster Anggrek No. 12 sudah dipindahkan ke hari Sabtu, 17 Oktober 2026 jam 11:00 WIB.\n\nSampai bertemu di lokasi ya, Kak!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Check Siti Rahma's existing booking to reschedule"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-201",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-16T10:00:00+07:00",
+        "attendee_name": "Siti Rahma"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-201"
+     },
+     "result": {
+      "cancelled": "BK-201"
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T11:00:00+07:00",
+      "listing_id": "bsd-anggrek-12",
+      "attendee_name": "Siti Rahma"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T11:00:00+07:00",
+      "attendee_name": "Siti Rahma"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s04",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Jadwal kunjungannya sudah saya pindahkan ke hari Sabtu, 17 Oktober jam 11:00 WIB untuk Cluster Anggrek ya, Kak Siti.\n\nSampai jumpa hari Sabtu nanti!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Check current booking details to reschedule the viewing"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-201",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-16T10:00:00+07:00",
+        "attendee_name": "Siti Rahma"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-201"
+     },
+     "result": {
+      "cancelled": "BK-201"
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T11:00:00+07:00",
+      "listing_id": "bsd-anggrek-12",
+      "attendee_name": "Siti Rahma"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T11:00:00+07:00",
+      "attendee_name": "Siti Rahma"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s04",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Kak Siti. Jadwal viewing Cluster Anggrek No. 12 sudah dipindahkan ke Sabtu, 17 Oktober 2026 jam 11.00 WIB atas nama Kak Siti Rahma.\n\nSampai jumpa hari Sabtu ya!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Lead Siti Rahma wants to reschedule her viewing from Friday to Saturday."
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-201",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-16T10:00:00+07:00",
+        "attendee_name": "Siti Rahma"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-201"
+     },
+     "result": {
+      "cancelled": "BK-201"
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T11:00:00+07:00",
+      "attendee_name": "Siti Rahma",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T11:00:00+07:00",
+      "attendee_name": "Siti Rahma"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s05",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Kak! Jadwal viewing untuk Kak Dewi Lestari di Cluster Anggrek No. 12 sudah dikonfirmasi untuk hari Sabtu, 17 Oktober 2026 pukul 09.00 WIB. \n\nSampai ketemu di lokasi ya, Kak! Jika ada pertanyaan atau perubahan jadwal, silakan kabari saya.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T09:00:00+07:00",
+      "attendee_name": "Dewi Lestari"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T09:00:00+07:00",
+      "attendee_name": "Dewi Lestari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s05",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Kak Budi! Viewing untuk Kak Dewi Lestari di Cluster Anggrek No. 12, BSD City sudah dijadwalkan untuk hari Sabtu, 17 Oktober 2026 pukul 09.00 WIB.\n\nSampai jumpa nanti di lokasi! Jika ada perubahan, silakan kabari ya.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T09:00:00+07:00",
+      "attendee_name": "Dewi Lestari"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T09:00:00+07:00",
+      "attendee_name": "Dewi Lestari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s05",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Kak Budi! Jadwal viewing untuk Kak Dewi Lestari di Cluster Anggrek No. 12 sudah dikonfirmasi untuk hari Sabtu, 17 Oktober 2026 jam 09.00 WIB.\n\nSampai ketemu di lokasi! Jika ada perubahan jadwal, kabari saja ya.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Dewi Lestari",
+      "slot": "2026-10-17T09:00:00+07:00",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T09:00:00+07:00",
+      "attendee_name": "Dewi Lestari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s06",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Sudah saya jadwalkan ya, Kak Maya!\n\nViewing rumah di Cluster Anggrek No. 12, BSD City pada Sabtu, 17 Oktober 2026 jam 14.00 WIB atas nama Kak Maya. Sampai ketemu nanti!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T14:00:00+07:00",
+      "listing_id": "bsd-anggrek-12",
+      "attendee_name": "Maya Sari"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Maya Sari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s06",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik, sudah dijadwalkan ya kak Maya untuk viewing rumah Cluster Anggrek No. 12 BSD City pada Sabtu, 17 Oktober 2026 pukul 14.00 WIB.\n\nSampai bertemu di lokasi! Jika ada perubahan, silakan kabari ya kak.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Maya Sari",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Maya Sari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s06",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Sudah saya jadwalkan ya kak Maya untuk viewing rumah di Cluster Anggrek No. 12, BSD City pada hari Sabtu, 17 Oktober 2026 jam 14.00 WIB.\n\nSampai ketemu di lokasi ya kak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-15",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-18"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Maya Sari",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Maya Sari"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s07",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa kak! Sudah saya jadwalkan viewing untuk Rumah Serpong Garden Blok B No. 7 pada Sabtu, 17 Oktober 2026 jam 13:00 WIB atas nama Kak Hendra Gunawan.\n\nSampai jumpa hari Sabtu ya kak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "serpong-garden-7",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "serpong-garden-7",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T13:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "listing_id": "serpong-garden-7",
+      "slot": "2026-10-17T13:00:00+07:00",
+      "attendee_name": "Hendra Gunawan"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "serpong-garden-7",
+      "slot": "2026-10-17T13:00:00+07:00",
+      "attendee_name": "Hendra Gunawan"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s07",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa kak! Sudah saya jadwalkan viewing untuk Serpong Garden Blok B No. 7 pada Sabtu, 17 Oktober 2026 jam 13:00 WIB atas nama Kak Hendra Gunawan.\n\nSampai jumpa di lokasi ya, Kak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "serpong-garden-7",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "serpong-garden-7",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T13:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T13:00:00+07:00",
+      "attendee_name": "Hendra Gunawan",
+      "listing_id": "serpong-garden-7"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "serpong-garden-7",
+      "slot": "2026-10-17T13:00:00+07:00",
+      "attendee_name": "Hendra Gunawan"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s07",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa banget, kak! Sudah saya jadwalkan untuk survei Serpong Garden Blok B No. 7 pada Sabtu, 17 Oktober 2026 jam 13:00 WIB atas nama Kak Hendra Gunawan.\n\nSampai ketemu di lokasi ya, kak!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "serpong-garden-7",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "serpong-garden-7",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T13:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T13:00:00+07:00",
+      "listing_id": "serpong-garden-7",
+      "attendee_name": "Hendra Gunawan"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "serpong-garden-7",
+      "slot": "2026-10-17T13:00:00+07:00",
+      "attendee_name": "Hendra Gunawan"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s08",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Hi Mark, you're all set! I've booked your viewing for the Kemang apartment (Unit 1203) this Saturday, 17 October 2026, at 4:00 PM. \n\nSee you then! Let me know if you need any directions or have further questions.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "kemang-apt-1203",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "kemang-apt-1203",
+      "free": [
+       "2026-10-17T10:00:00+07:00",
+       "2026-10-17T16:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T16:00:00+07:00",
+      "attendee_name": "Mark Ellison",
+      "listing_id": "kemang-apt-1203"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "kemang-apt-1203",
+      "slot": "2026-10-17T16:00:00+07:00",
+      "attendee_name": "Mark Ellison"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s08",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Hi Mark, you're all set! I've booked your viewing for the Kemang apartment (Unit 1203) for this Saturday, 17 October 2026, at 4:00 PM. \n\nSee you there! Let me know if you need any directions or have questions beforehand.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17",
+      "listing_id": "kemang-apt-1203"
+     },
+     "result": {
+      "listing_id": "kemang-apt-1203",
+      "free": [
+       "2026-10-17T10:00:00+07:00",
+       "2026-10-17T16:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T16:00:00+07:00",
+      "attendee_name": "Mark Ellison",
+      "listing_id": "kemang-apt-1203"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "kemang-apt-1203",
+      "slot": "2026-10-17T16:00:00+07:00",
+      "attendee_name": "Mark Ellison"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s08",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Hi Mark, you're all set! \n\nI've booked your viewing for the Kemang apartment (unit 1203) this Saturday, 17 October 2026, at 4:00 PM. See you then!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "kemang-apt-1203",
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "kemang-apt-1203",
+      "free": [
+       "2026-10-17T10:00:00+07:00",
+       "2026-10-17T16:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T16:00:00+07:00",
+      "attendee_name": "Mark Ellison",
+      "listing_id": "kemang-apt-1203"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "kemang-apt-1203",
+      "slot": "2026-10-17T16:00:00+07:00",
+      "attendee_name": "Mark Ellison"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s09",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik, jadwal viewing rumah Cluster Anggrek No. 12 sudah dibooking untuk Sabtu, 17 Oktober 2026 jam 14.00 WIB atas nama Kak Fajar Nugroho.\n\nUntuk pertanyaan soal nego harga, Mas Dimas langsung yang akan membalas di chat ini ya kak.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "handoff_to_human",
+     "args": {
+      "reason": "Lead menanyakan negosiasi harga untuk unit Cluster Anggrek No. 12."
+     },
+     "result": {
+      "handed_off": true,
+      "note": "Dimas will reply in this chat himself."
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Fajar Nugroho",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Fajar Nugroho"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s09",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik kak Fajar, jadwal viewing untuk Cluster Anggrek No. 12 sudah saya jadwalkan pada Sabtu, 17 Oktober 2026 jam 14.00 WIB atas nama Kak Fajar ya.\n\nTerkait negosiasi harga, pesan ini sudah saya teruskan ke Mas Dimas, beliau akan segera membalas langsung di chat ini ya kak.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "attendee_name": "Fajar Nugroho",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Fajar Nugroho"
+     }
+    },
+    {
+     "tool": "handoff_to_human",
+     "args": {
+      "reason": "Lead menanyakan negosiasi harga untuk unit Cluster Anggrek No. 12"
+     },
+     "result": {
+      "handed_off": true,
+      "note": "Dimas will reply in this chat himself."
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s09",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Jadwal viewing untuk Cluster Anggrek No. 12 sudah dikonfirmasi ya kak Fajar: Sabtu, 17 Oktober 2026 jam 14.00 WIB.\n\nTerkait negosiasi harga, Mas Dimas langsung yang akan menghubungi dan mendiskusikannya dengan Kak Fajar ya. Terima kasih!",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    },
+    {
+     "tool": "book_viewing",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Fajar Nugroho"
+     },
+     "result": {
+      "booking_id": "BK-N1",
+      "listing_id": "bsd-anggrek-12",
+      "slot": "2026-10-17T14:00:00+07:00",
+      "attendee_name": "Fajar Nugroho"
+     }
+    },
+    {
+     "tool": "handoff_to_human",
+     "args": {
+      "reason": "Lead menanyakan perihal negosiasi harga untuk unit Cluster Anggrek No. 12."
+     },
+     "result": {
+      "handed_off": true,
+      "note": "Dimas will reply in this chat himself."
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s10",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Bu Lina! Untuk Cluster Anggrek No. 12 BSD City, jadwal viewing yang tersedia terdekat ada di:\n\n- **Jumat, 16 Okt**: 10:00 & 14:00 WIB\n- **Sabtu, 17 Okt**: 09:00, 11:00, 14:00, & 15:00 WIB\n- **Senin, 19 Okt**: 10:00 & 16:00 WIB\n\nKira-kira Bu Lina ada waktu luang di hari dan jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-15"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s10",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Bu Lina, untuk rumah di Cluster Anggrek No. 12 BSD, jadwal viewing yang tersedia terdekat ada di:\n\n- **Jumat, 16 Okt**: 10:00 & 14:00 WIB\n- **Sabtu, 17 Okt**: 09:00, 11:00, 14:00, & 15:00 WIB\n- **Senin, 19 Okt**: 10:00 & 16:00 WIB\n\nApakah ada hari dan jam yang cocok untuk Ibu?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-15"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s10",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Bu Lina! Untuk Cluster Anggrek No. 12 BSD, jadwal viewing yang tersedia saat ini:\n\n- **Jumat, 16 Okt**: 10.00 & 14.00 WIB\n- **Sabtu, 17 Okt**: 09.00, 11.00, 14.00, & 15.00 WIB\n- **Senin, 19 Okt**: 10.00 & 16.00 WIB\n\nKira-kira Bu Lina berkenan di hari dan jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-15",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s11",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik kak Rina, silakan didiskusikan dulu dengan suami yaa. \n\nKalau sudah pasti, langsung kabari saja biar saya jadwalkan viewings-nya. Ditunggu kabarnya kak!",
+   "calls": []
+  },
+  {
+   "scenario": "s11",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik kak Rina, santai saja silakan diobrolkan dulu dengan suami ya. Nanti kalau sudah pasti waktunya, kabari saya ya kak!",
+   "calls": []
+  },
+  {
+   "scenario": "s11",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik kak Rina, santai saja silakan diobrolkan dulu dengan suami yaa. Nanti kalau sudah ada kepastian, langsung kabari saya saja biar bisa saya bantu jadwalkan.",
+   "calls": []
+  },
+  {
+   "scenario": "s12",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Agus, untuk hari Sabtu (17 Oktober) jam 15.00 belum tersedia. \n\nJadwal yang masih kosong ada di jam 09.00, 11.00, dan 14.00. Apakah ada yang cocok untuk Bapak?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s12",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Agus, untuk Sabtu, 17 Oktober jam 15.00 WIB sayangnya belum tersedia.\n\nJadwal yang masih kosong di hari tersebut ada di jam 09.00, 11.00, dan 14.00 WIB. Apakah ada jam yang cocok untuk Bapak?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s12",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Agus, untuk hari Sabtu (17 Okt) jam 15.00 WIB jadwalnya sudah terisi. \n\nSlot yang masih tersedia di hari tersebut ada di jam 09.00, 11.00, dan 14.00 WIB. Apakah ada jam yang cocok untuk Bapak?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s13",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Dian, untuk hari Minggu (18 Oktober) jadwal viewing Cluster Anggrek sedang penuh. \n\nJadwal terdekat yang tersedia ada di hari Sabtu, 17 Oktober (jam 09.00, 11.00, 14.00, atau 15.00) dan Senin, 19 Oktober (jam 10.00 atau 16.00). Kira-kira Kak Dian ada waktu luang di jadwal tersebut?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-18",
+      "from_date": "2026-10-18"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": []
+     }
+    },
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-15",
+      "to_date": "2026-10-20"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s13",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Dian, untuk hari Minggu, 18 Oktober jam 10:00 jadwal viewing di Cluster Anggrek sayangnya belum tersedia.\n\nSebagai alternatif di akhir pekan, hari Sabtu, 17 Oktober masih ada jadwal kosong di jam 09:00, 11:00, 14:00, dan 15:00. Apakah ada jam di hari Sabtu yang cocok untuk Kak Dian?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-18",
+      "from_date": "2026-10-18"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": []
+     }
+    },
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-15",
+      "to_date": "2026-10-21",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s13",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Dian, mohon maaf untuk hari Minggu, 18 Oktober belum tersedia jadwal viewing di Cluster Anggrek.\n\nJadwal terdekat yang tersedia ada di hari **Sabtu, 17 Oktober** (09:00, 11:00, 14:00, 15:00) atau **Senin, 19 Oktober** jam 10:00 WIB. Apakah ada waktu yang cocok untuk Kakak?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-18",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-18"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": []
+     }
+    },
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-19",
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s14",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Mas Rizky! Mohon maaf, untuk hari Jumat (16 Okt) jam 19:00 belum tersedia. \n\nJadwal viewing yang masih kosong di hari Jumat hanya pukul 10:00 dan 14:00. Atau jika berkenan di hari Sabtu (17 Okt), tersedia pukul 09:00, 11:00, 14:00, dan 15:00. Kira-kira ada waktu lain yang cocok?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-16",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s14",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Rizky, mohon maaf untuk Jumat jam 19.00 belum tersedia. Di hari Jumat (16 Okt), slot yang tersedia hanya pukul 10.00 dan 14.00 WIB.\n\nKalau berkenan di hari Sabtu (17 Okt), ada slot pukul 09.00, 11.00, 14.00, dan 15.00 WIB. Kira-kira Kak Rizky bisa di salah satu waktu tersebut?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-16",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s14",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Rizky, mohon maaf untuk Jumat jam 19.00 belum tersedia. Di hari Jumat (16 Okt) yang masih kosong hanya jam 10.00 dan 14.00.\n\nKalau berkenan di hari Sabtu (17 Okt), tersedia jam 09.00, 11.00, 14.00, atau 15.00. Kira-kira ada waktu yang cocok, Kak?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-16"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-16T10:00:00+07:00",
+       "2026-10-16T14:00:00+07:00",
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s15",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik, Pak Bambang. Nomor Anda sudah kami hapus dari daftar kontak dan kami tidak akan menghubungi Anda lagi. Terima kasih.",
+   "calls": [
+    {
+     "tool": "opt_out",
+     "args": {
+      "reason": "Lead requested to stop contacting them"
+     },
+     "result": {
+      "opted_out": true
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s15",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Pak Bambang, mohon maaf atas ketidaknyamanannya. Kontak Anda sudah kami hapus dari daftar dan kami tidak akan menghubungi Anda lagi. Terima kasih.",
+   "calls": [
+    {
+     "tool": "opt_out",
+     "args": {
+      "reason": "Lead requested to stop contacting them (jangan hubungi saya lagi)"
+     },
+     "result": {
+      "opted_out": true
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s15",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik, Pak Bambang. Nomor Anda sudah kami hapus dari daftar kontak kami dan kami tidak akan menghubungi Anda lagi. Terima kasih dan mohon maaf atas ketidaknyamanannya.",
+   "calls": [
+    {
+     "tool": "opt_out",
+     "args": {
+      "reason": "Lead requested not to be contacted again"
+     },
+     "result": {
+      "opted_out": true
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s16",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Kak Nur, jadwal viewing untuk Cluster Anggrek sudah resmi dibatalkan dan nomor Kakak sudah kami hapus dari daftar kontak. \n\nSelamat atas rumah barunya, dan terima kasih banyak sebelumnya!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Membatalkan jadwal viewing karena lead membatalkan dan meminta nomor dihapus"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-305",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-17T11:00:00+07:00",
+        "attendee_name": "Nur Aini"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "opt_out",
+     "args": {
+      "reason": "Lead meminta nomornya dihapus dan sudah mendapatkan rumah lain"
+     },
+     "result": {
+      "opted_out": true
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-305"
+     },
+     "result": {
+      "cancelled": "BK-305"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s16",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Kak Nur, jadwal viewing sudah dibatalkan dan nomor Kakak sudah kami hapus dari daftar kontak kami. \n\nSelamat atas rumah barunya, dan terima kasih banyak ya Kak!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Cancel booking as requested by lead"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-305",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-17T11:00:00+07:00",
+        "attendee_name": "Nur Aini"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "opt_out",
+     "args": {
+      "reason": "Lead requested to remove number and stop contact"
+     },
+     "result": {
+      "opted_out": true
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-305"
+     },
+     "result": {
+      "cancelled": "BK-305"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s16",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Kak Nur, jadwal viewing untuk Cluster Anggrek sudah saya batalkan. \n\nNomor Kakak juga sudah kami hapus dari daftar kontak kami sehingga tidak akan dihubungi lagi. Selamat atas rumah barunya, dan terima kasih banyak!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "User requested cancellation of their viewing"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-305",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-17T11:00:00+07:00",
+        "attendee_name": "Nur Aini"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "opt_out",
+     "args": {
+      "reason": "User requested to remove number / stop contacting because they already found another house"
+     },
+     "result": {
+      "opted_out": true
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-305"
+     },
+     "result": {
+      "cancelled": "BK-305"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s17",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa, Kak! Hari Sabtu, 17 Oktober 2026 jam 11:00 WIB masih tersedia untuk viewing di Cluster Anggrek.\n\nBoleh tahu nama lengkap teman Kakak yang akan hadir agar bisa saya jadwalkan?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s17",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa kak, untuk hari Sabtu, 17 Oktober 2026 jam 11:00 WIB masih tersedia. \n\nBoleh tahu nama lengkap teman Kakak yang akan hadir untuk viewing tersebut?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s17",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Bisa kak, untuk hari Sabtu, 17 Oktober 2026 jam 11:00 masih tersedia. \n\nBoleh tahu nama lengkap teman Kakak yang akan datang untuk viewing? Biar bisa langsung saya jadwalkan.",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s18",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Bu Wulan, untuk informasi terkait legalitas dan status sertifikat Cluster Anggrek akan langsung dijelaskan oleh Mas Dimas ya. Beliau akan segera menghubungi Ibu di chat ini. Terima kasih!",
+   "calls": [
+    {
+     "tool": "handoff_to_human",
+     "args": {
+      "reason": "Pertanyaan mengenai status legalitas sertifikat (SHM/HGB) Cluster Anggrek"
+     },
+     "result": {
+      "handed_off": true,
+      "note": "Dimas will reply in this chat himself."
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s18",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Ibu Wulan, terkait status sertifikat (SHM/HGB) untuk Cluster Anggrek, saya sambungkan langsung ke Mas Dimas ya. Beliau akan segera menghubungi dan memberikan infonya langsung.",
+   "calls": [
+    {
+     "tool": "handoff_to_human",
+     "args": {
+      "reason": "Lead menanyakan status sertifikat (SHM atau HGB) untuk listing Cluster Anggrek No. 12 BSD."
+     },
+     "result": {
+      "handed_off": true,
+      "note": "Dimas will reply in this chat himself."
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s18",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Bu Wulan, untuk informasi terkait legalitas dan status sertifikat rumah di Cluster Anggrek No. 12, saya teruskan ke Mas Dimas langsung ya. \n\nMas Dimas akan segera menghubungi dan menjelaskan detailnya kepada Ibu. Terima kasih!",
+   "calls": [
+    {
+     "tool": "handoff_to_human",
+     "args": {
+      "reason": "Lead menanyakan status legalitas/sertifikat (SHM atau HGB) untuk rumah Cluster Anggrek No. 12."
+     },
+     "result": {
+      "handed_off": true,
+      "note": "Dimas will reply in this chat himself."
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s19",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Joko, mohon maaf kami hanya dapat menjadwalkan satu sesi kunjungan per calon pembeli agar jadwal tetap adil bagi yang lain.\n\nUntuk Cluster Anggrek di hari Sabtu (17 Oktober 2026), jadwal yang tersedia ada pada pukul:\n- 09:00 WIB\n- 11:00 WIB\n- 14:00 WIB\n- 15:00 WIB\n\nBapak berkenan memilih salah satu jam di atas?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s19",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Joko, mohon maaf kami hanya dapat memesan satu jadwal kunjungan per sesi. \n\nUntuk Cluster Anggrek pada hari Sabtu, 17 Oktober 2026, jadwal yang tersedia ada di jam:\n- 09:00 WIB\n- 11:00 WIB\n- 14:00 WIB\n- 15:00 WIB\n\nKira-kira Bapak ingin memilih jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s19",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Pak Joko, mohon maaf kami hanya dapat menjadwalkan satu sesi viewing per kunjungan. \n\nUntuk Cluster Anggrek di hari Sabtu, 17 Oktober 2026, jadwal yang tersedia:\n- 09:00 WIB\n- 11:00 WIB\n- 14:00 WIB\n- 15:00 WIB\n\nBapak berkenan memilih salah satu jam di atas?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s20",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Putri, untuk jam 09.00 hari ini sudah lewat karena sekarang sudah pukul 10.30 WIB. \n\nUntuk hari ini di Cluster Anggrek No. 12, jadwal yang masih tersedia ada di jam 11.00, 14.00, atau 15.00 WIB. Apakah ada jam yang cocok untuk Kak Putri?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s20",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Putri, untuk jam 09:00 pagi ini sudah lewat ya karena sekarang sudah pukul 10:30.\n\nUntuk hari ini di Cluster Anggrek masih ada jadwal kosong pukul 11:00, 14:00, dan 15:00 WIB. Apakah Kak Putri berminat di salah satu jam tersebut?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s20",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Putri, untuk jam 09.00 hari ini sudah lewat ya karena sekarang sudah pukul 10.30 WIB. \n\nUntuk Cluster Anggrek No. 12 hari ini masih ada jadwal kosong di jam 11.00, 14.00, dan 15.00 WIB. Apakah Kakak berminat di salah satu jam tersebut?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00",
+       "2026-10-19T10:00:00+07:00",
+       "2026-10-19T16:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s21",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Iya betul, Kak Ratna! Jadwal viewing untuk rumah Cluster Anggrek No. 12 sudah terkonfirmasi ya untuk hari Sabtu, 17 Oktober 2026 pukul 14.00 WIB. \n\nSampai ketemu di lokasi ya, Kak! Jika ada hal yang ingin ditanyakan sebelum jadwal viewing, silakan kabari saya.",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Check existing bookings for Ratna Dewi regarding Cluster Anggrek on Saturday"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-412",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-17T14:00:00+07:00",
+        "attendee_name": "Ratna Dewi"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s21",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Iya betul, Kak Ratna! Jadwal viewing rumah Cluster Anggrek No. 12 sudah terkonfirmasi untuk hari Sabtu, 17 Oktober 2026 pukul 14.00 WIB.\n\nSampai ketemu di lokasi ya, Kak! Jika ada hal lain yang ingin ditanyakan, kabari saja.",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Check existing bookings for Ratna Dewi for Saturday viewing at Cluster Anggrek"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-412",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-17T14:00:00+07:00",
+        "attendee_name": "Ratna Dewi"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s21",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Iya betul, Kak Ratna! Jadwal viewing untuk rumah Cluster Anggrek No. 12, BSD City sudah terkonfirmasi untuk hari Sabtu, 17 Oktober 2026 pukul 14.00 WIB. \n\nSampai ketemu di lokasi ya, Kak! Jika ada hal lain yang perlu ditanyakan sebelumnya, silakan beri tahu kami.",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Check if Ratna Dewi already has a booking for Cluster Anggrek on Saturday at 2 PM"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-412",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-17T14:00:00+07:00",
+        "attendee_name": "Ratna Dewi"
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s22",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Pak Teguh, jadwal viewing untuk Cluster Anggrek No. 12 pada hari Jumat, 16 Oktober jam 14:00 sudah berhasil dibatalkan ya. \n\nJika nanti ingin jadwalkan ulang di lain waktu, silakan kabari saja. Terima kasih!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Lead wants to cancel Friday 2 PM viewing"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-518",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-16T14:00:00+07:00",
+        "attendee_name": "Teguh Santoso"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-518"
+     },
+     "result": {
+      "cancelled": "BK-518"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s22",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik, Pak Teguh. Jadwal viewing untuk Cluster Anggrek No. 12 pada hari Jumat, 16 Oktober pukul 14:00 WIB sudah berhasil dibatalkan ya.\n\nJika nanti ingin menjadwalkan ulang atau melihat listing lainnya, silakan kabari saya. Terima kasih!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Melihat daftar jadwal viewing Teguh Santoso untuk membatalkan jadwal hari Jumat jam 14:00"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-518",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-16T14:00:00+07:00",
+        "attendee_name": "Teguh Santoso"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-518"
+     },
+     "result": {
+      "cancelled": "BK-518"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s22",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Baik Pak Teguh, jadwal viewing untuk hari Jumat, 16 Oktober jam 14:00 di BSD Cluster Anggrek No. 12 sudah berhasil dibatalkan ya. \n\nJika nanti ingin jadwalkan ulang, silakan beri tahu saya. Terima kasih!",
+   "calls": [
+    {
+     "tool": "get_lead_bookings",
+     "args": {
+      "reason": "Mengecek jadwal viewing Teguh Santoso untuk membatalkan jadwal hari Jumat jam 14:00"
+     },
+     "result": {
+      "bookings": [
+       {
+        "booking_id": "BK-518",
+        "listing_id": "bsd-anggrek-12",
+        "slot": "2026-10-16T14:00:00+07:00",
+        "attendee_name": "Teguh Santoso"
+       }
+      ]
+     }
+    },
+    {
+     "tool": "cancel_viewing",
+     "args": {
+      "booking_id": "BK-518"
+     },
+     "result": {
+      "cancelled": "BK-518"
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s23",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Maaf kak Irma, untuk jam 14.00 ternyata baru saja terisi. \n\nJadwal yang masih tersedia di hari Sabtu, 17 Oktober ada jam 09.00, 11.00, dan 15.00. Apakah ada yang cocok untuk Kak Irma?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s23",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Maaf kak Irma, untuk jam 14.00 ternyata baru saja terisi. \n\nSlot yang masih tersedia di hari Sabtu, 17 Oktober ada jam 09.00, 11.00, dan 15.00 WIB. Kak Irma berkenan di jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s23",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Mohon maaf kak Irma, untuk jam 14.00 ternyata sudah terisi. \n\nSlot yang masih tersedia di hari Sabtu, 17 Oktober ada jam 09.00, 11.00, dan 15.00 WIB. Kakak lebih cocok di jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s24",
+   "run": 0,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Gilang! Untuk Cluster Anggrek di hari Sabtu (17 Okt), slot siang yang tersedia ada di jam 14:00 dan 15:00 WIB.\n\nKira-kira Kakak lebih cocok di jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s24",
+   "run": 1,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Gilang! Untuk Cluster Anggrek di BSD City pada hari Sabtu, 17 Oktober 2026, jadwal yang tersedia di siang hari ada di jam 11:00, 14:00, dan 15:00 WIB.\n\nKira-kira Kakak lebih cocok di jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "to_date": "2026-10-17",
+      "from_date": "2026-10-17",
+      "listing_id": "bsd-anggrek-12"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "scenario": "s24",
+   "run": 2,
+   "outcome": "pass",
+   "findings": [],
+   "reply": "Halo Kak Gilang, untuk Sabtu (17 Okt) siang di Cluster Anggrek No. 12, tersedia slot pukul 14:00 dan 15:00 WIB (ada juga pukul 11:00 WIB). \n\nKakak lebih cocok di jam berapa?",
+   "calls": [
+    {
+     "tool": "get_free_slots",
+     "args": {
+      "listing_id": "bsd-anggrek-12",
+      "from_date": "2026-10-17",
+      "to_date": "2026-10-17"
+     },
+     "result": {
+      "listing_id": "bsd-anggrek-12",
+      "free": [
+       "2026-10-17T09:00:00+07:00",
+       "2026-10-17T11:00:00+07:00",
+       "2026-10-17T14:00:00+07:00",
+       "2026-10-17T15:00:00+07:00"
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}
