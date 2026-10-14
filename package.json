@@ -1,0 +1,33 @@
+{
+  "name": "wa-booking-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A WhatsApp agent that books property viewings through tools, and 24 chats written to make it book wrongly.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Fikri Alfaraby <fikrialfaraby04@gmail.com>",
+  "engines": {
+    "node": ">=23.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FikriAlfaraby/wa-booking-agent.git"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "check": "npm run typecheck && npm run lint && npm test"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "typescript": "~6.0",
+    "typescript-eslint": "^8.71.2"
+  }
+}
