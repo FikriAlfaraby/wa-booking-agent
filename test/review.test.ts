@@ -24,9 +24,11 @@ const read = <T>(path: URL) => JSON.parse(readFileSync(path, "utf8")) as T
 const results = readdirSync(dir("results"))
   .filter((f) => f.endsWith(".json"))
   .map((f) => read<{ model: string; runs: ResultRun[] }>(new URL(f, dir("results"))))
-const review = readdirSync(dir("review"))
+const files = readdirSync(dir("review"))
   .filter((f) => f.endsWith(".json"))
-  .flatMap((f) => read<{ items: ReviewItem[] }>(new URL(f, dir("review"))).items)
+  .map((f) => read<{ items: ReviewItem[]; replies?: { model: string; scenario: string; run: number; quote: string; note: string }[] }>(new URL(f, dir("review"))))
+const review = files.flatMap((f) => f.items)
+const untrue = files.flatMap((f) => f.replies ?? [])
 const key = (model: string, scenario: string, run: number) => `${model} ${scenario} ${run}`
 
 describe("the review of every turn the checker did not pass", () => {
@@ -48,6 +50,15 @@ describe("the review of every turn the checker did not pass", () => {
   it("gives every item a verdict and a note in words", () => {
     for (const item of review) {
       assert.ok(["asked first", "real"].includes(item.verdict), item.verdict)
+      assert.ok(item.note.length > 40, item.note)
+    }
+  })
+
+  it("quotes every untrue reply word for word from its recorded turn", () => {
+    assert.ok(untrue.length > 0)
+    for (const item of untrue) {
+      const run = results.find((x) => x.model === item.model)?.runs.find((x) => x.scenario === item.scenario && x.run === item.run)
+      assert.ok(run?.reply.includes(item.quote), `${item.model} ${item.scenario} ${item.run}: ${item.quote}`)
       assert.ok(item.note.length > 40, item.note)
     }
   })
