@@ -27,6 +27,9 @@ describe("the README", () => {
     const untrue = (model: string) => replies.filter((r) => r.model === model).length
     says(`| a reply that told the lead something untrue (read by hand) | ${untrue("gpt-6-luna")} | ${untrue("gemini-3.8-flash")} |`)
     says(`reading every reply found ${replies.length} that told the lead something untrue`)
+    const passed = replies.filter((r) => [...luna.map((x) => ({ ...x, model: "gpt-6-luna" })), ...gemini.map((x) => ({ ...x, model: "gemini-3.8-flash" }))]
+      .some((x) => x.model === r.model && x.scenario === r.scenario && x.run === r.run && x.outcome === "pass")).length
+    says(`${passed} of them in turns the checker passed`)
     assert.equal(count(luna, "error") + count(gemini, "error"), 0)
   })
 
@@ -49,11 +52,18 @@ describe("the README", () => {
     assert.equal(deleted.filter((r) => r.model === "gemini-3.8-flash").length, 6)
     assert.equal(deleted.filter((r) => r.model === "gpt-6-luna").length, 1)
     says("Gemini, in all six turns where a lead opted out, and Luna once, said the lead's number had been deleted")
+    // the other kinds, each named with its chat
+    assert.deepEqual(replies.filter((r) => /yang (masih kosong|tersedia)/i.test(r.quote)).map((r) => `${r.model} ${r.scenario}`).sort(),
+      ["gemini-3.8-flash s24", "gpt-6-luna s12", "gpt-6-luna s23"])
+    says("Three replies named some free times as the only ones (Luna in s12 and s23, Gemini in s24)")
+    assert.deepEqual(replies.filter((r) => r.quote.includes("penuh")).map((r) => `${r.model} ${r.scenario}`), ["gemini-3.8-flash s13"])
+    says('Gemini called Sunday "penuh" (full)')
+    assert.equal(replies.length, 3 + 6 + 1 + 3 + 1 + 1, "every untrue reply is named in the README")
   })
 
   it("says every trap was passed in every run", () => {
     const traps = read<{ scenarios: { id: string; expect: { book: unknown[] } }[] }>("data/scenarios.json").scenarios.filter((s) => s.expect.book.length === 0).map((s) => s.id)
     for (const runs of [luna, gemini]) for (const r of runs) if (traps.includes(r.scenario)) assert.equal(r.outcome, "pass", `${r.scenario} run ${r.run}`)
-    says("By the checker, every trap was passed in every run")
+    says("By the calendar, every trap was passed in every run")
   })
 })
