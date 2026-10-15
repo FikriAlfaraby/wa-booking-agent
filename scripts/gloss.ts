@@ -4,7 +4,8 @@
 //
 // Glosses already in the file that pass the checks are kept; only the rest are sent, in batches. A
 // gloss that fails a check (src/glosses.ts) is asked for again with the reasons, twice at most; what
-// still fails is listed at the end and left out of the file. Glosses edited by hand stay as they are.
+// still fails is listed at the end and left out of the file. A gloss edited by hand is kept as long as
+// it passes the checks (corrected_by_hand says why it was edited).
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs"
 
@@ -23,11 +24,15 @@ Translate each line into natural English that says exactly what the line says: t
 requests and tone (casual stays casual). Do not add, explain or leave out anything.
 
 Words of these chats:
-- pagi = morning; siang = midday to early afternoon; sore = late afternoon; malam = evening.
-  jam 2 siang = 2 pm. besok = tomorrow; lusa = the day after tomorrow. Senin to Minggu are Monday to
+- pagi = morning; sore = late afternoon; malam = evening. siang on its own (Sabtu siang, slot
+  siang, siang hari) = around midday, roughly 11:00 to 15:00: write "midday", never "afternoon";
+  with an hour it is a clock time: jam 2 siang = 2 pm. besok = tomorrow; lusa = the day after tomorrow. Senin to Minggu are Monday to
   Sunday; Oktober = October; pukul = at; WIB stays WIB.
-- kak, kakak, mas, mbak, bu, pak are polite forms of address: leave them out, but keep a name that
-  follows them.
+- kak, kakak, mas, mbak, bu, ibu, pak, bapak are polite forms of address: leave them out ("Mas
+  Dimas" is "Dimas"), but keep a name that follows them.
+- Yang masih kosong X / yang kosong X = what's still free is X: it names the free times, all of
+  them. Soal harga bisa nego = as for whether the price is negotiable (a question being passed
+  on, not a promise).
 - A 2 written after a word repeats the word, it is not the number two: lihat2 = look around.
 - viewing stays viewing; lead stays lead.
 
@@ -73,11 +78,13 @@ function parse(answer: string): Record<string, unknown> {
 }
 
 async function ask(content: string): Promise<Record<string, unknown>> {
+  // a missing key or a refused request stops the run; only an answer that is not JSON counts as none
+  const turn = await model.turn([{ role: "system", content: SYSTEM }, { role: "user", content }], [])
   try {
-    const turn = await model.turn([{ role: "system", content: SYSTEM }, { role: "user", content }], [])
     return parse(turn.content)
-  } catch {
-    return {}
+  } catch (err) {
+    if (err instanceof SyntaxError) return {}
+    throw err
   }
 }
 
@@ -136,7 +143,11 @@ async function worker() {
   for (let i = next++; i < chunks.length; i = next++) {
     for (const [line, gloss] of await translate(chunks[i] ?? [])) {
       if (!problems(line, gloss, keep).length) file.glosses[line] = gloss
-      else if (!problems(line, null, keep).length) file.glosses[line] = null // not Indonesian: no gloss needed
+      else if (!problems(line, null, keep).length) {
+        // not Indonesian by the word list: no gloss is needed, but say so where the model translated it
+        if (gloss) console.log(`  null, though the model translated it: ${line.slice(0, 80)}`)
+        file.glosses[line] = null
+      }
     }
     save()
     console.log(`  batch ${++done}/${chunks.length}`)

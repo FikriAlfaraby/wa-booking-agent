@@ -1,13 +1,14 @@
 /**
  * English glosses for readers who do not read Indonesian.
  *
- * data/glosses-en.json pairs every line the replay shows (the chats, each agent's reply, the text
- * the agents passed to tools, the quotes in the review) with an English line, or with null when the
- * line has no Indonesian in it. `problems` checks that a gloss says the same thing: no Indonesian
- * left; every number with its unit, and every name the dataset knows, kept; line breaks and length
- * about the same. These checks cannot see every change of meaning, so the lines a finding rests on
- * are pinned by hand in test/glosses.test.ts. The agent never sees a gloss: nothing in src/ besides
- * this file names it.
+ * data/glosses-en.json pairs every line the replay on fikrialfaraby.com/booking-agent shows (the
+ * chats, each agent's reply, the text the agents passed to tools), plus the quotes in the review,
+ * with an English line, or with null when the line has no Indonesian in it. `problems` checks that a
+ * gloss says the same thing: no Indonesian left; every number with its unit; the leads', friends'
+ * and places' names; every weekday; a "not" where the line says belum or tidak; morning and evening
+ * hours not swapped; line breaks and length about the same. It cannot see every change of meaning,
+ * so the replies a finding rests on are pinned by hand in test/glosses.test.ts. The agent never sees
+ * a gloss: nothing in src/ besides this file names it.
  */
 
 import type { Dataset } from "./scenarios.ts"
@@ -19,28 +20,55 @@ lagi apa gimana dong aja tapi tp karena krn akan harus pada dalam adalah bahwa h
 terima kasih makasih silakan mohon tolong kirim berapa brp boleh kok sih deh nih tuh banget sekarang skrg
 nanti tadi dulu lebih kurang semua minta pakai pake dapat dapet siap baik sampai sampe lihat liat cek bentar
 sebentar bagaimana kenapa kapan mana masih sedang hanya cuma saja kami kita anda dia mereka terus lalu jangan
-jgn maaf nomor sesuai oke rumah ingin pukul siang sore pagi malam jadwal kosong penuh tersedia hapus dihapus
+jgn maaf nomor sesuai oke rumah ingin pukul siang pagi malam jadwal kosong penuh tersedia hapus dihapus
 hubungi lantai apartemen kamar teman temen suami istri harga nego sertifikat kedua pertama ketiga kayaknya
-kabarin kabari januari februari maret april mei juni juli agustus september oktober november desember senin
-selasa rabu kamis jumat sabtu minggu`.split(/\s+/)
+kabarin kabari januari februari maret mei juni juli agustus oktober desember senin selasa rabu kamis jumat
+sabtu minggu halo pak bu ibu bapak mas mbak selamat betul cocok pilih nama lain langsung waktu jika apakah
+dibatalkan pertanyaan legalitas`.split(/\s+/)
+/** Indonesian words that are also English ("jam", "sore"): they make a line Indonesian, but an English
+ * gloss may use them. Months spelt the same in both (April, September, November) count for neither. */
+const DETECT_ONLY = /\b(jam|sore)\b/i
 /** Short words that are also English words or names when capitalised ("Hello Dan", "Ada"): in a gloss
  * they count only in lower case. A line is Indonesian if it has any word above, in any case. */
 const AMBIGUOUS = new Set(["dan", "di", "ke", "ya", "ada", "apa", "mana", "dia", "sama", "mau", "kita", "ka", "ga", "aku"])
-const ANY = new RegExp(`\\b(${WORDS.join("|")})\\b`, "i")
 const STRICT = new RegExp(`\\b(${WORDS.filter((w) => !AMBIGUOUS.has(w)).join("|")})\\b`, "i")
 const LOWER = new RegExp(`\\b(${[...AMBIGUOUS].join("|")})\\b`)
 /** warnanya, nomornya: the -nya forms the list cannot hold one by one (not Kenya, not Tanya). */
 const NYA = /\b[a-z]{3,}nya\b/i
 /** A number, with the unit that scales it: 227rb, 2,1 miliar, 227k, 2.1 billion. */
-const AMOUNT = /(?<![\d.,:])(\d+(?:[.,:]\d+)*)(?:\s?(rb|ribu|k|jt|juta|thousand|million|miliar|billion)\b)?/gi
-const ZEROS: Record<string, number> = { rb: 3, ribu: 3, k: 3, thousand: 3, jt: 6, juta: 6, million: 6, miliar: 9, billion: 9 }
+const AMOUNT = /(?<![\d.,:])(\d+(?:[.,:]\d+)*)(?:\s?(rb|ribu|k|jt|juta|thousand|million|miliar|milyar|billion|bn)\b)?/gi
+const ZEROS: Record<string, number> = {
+  rb: 3, ribu: 3, k: 3, thousand: 3, jt: 6, juta: 6, million: 6, miliar: 9, milyar: 9, billion: 9, bn: 9,
+}
 /** In chat Indonesian a 2 after a word repeats it: lihat2 is lihat-lihat, not two. Not after p or x
  * (Rp2.000, x2), and not when more digits follow. */
 const REPEAT = /(?<=[a-oq-wyz])2(?![.,]?\d)\b/g
 /** Booking and listing IDs: BK-N1, bsd-anggrek-12. */
 const ID = /\b(?:[A-Z]{2,}-[A-Z0-9]+|[a-z]+(?:-[a-z0-9]+)+-\d+)\b/g
 
-export const isIndonesian = (text: string): boolean => ANY.test(text) || NYA.test(text)
+/** A line is Indonesian when it has one of the words above; the short ones count only in lower case,
+ * so "Hi Dan, could I come at 4pm?" is English. */
+export const isIndonesian = (text: string): boolean =>
+  STRICT.test(text) || LOWER.test(text) || NYA.test(text) || DETECT_ONLY.test(text)
+
+const DAYS: [RegExp, RegExp, string][] = [
+  [/\bsenin\b/i, /\bmon(day)?\b/i, "Monday"],
+  [/\bselasa\b/i, /\btue(s|sday)?\b/i, "Tuesday"],
+  [/\brabu\b/i, /\bwed(nesday)?\b/i, "Wednesday"],
+  [/\bkamis\b/i, /\bthu(rs|rsday)?\b/i, "Thursday"],
+  [/\bjumat\b/i, /\bfri(day)?\b/i, "Friday"],
+  [/\bsabtu\b/i, /\bsat(urday)?\b/i, "Saturday"],
+  // lower-case minggu is also "week"; Minggu, or hari minggu, is Sunday
+  [/\bMinggu\b|\bhari minggu\b/, /\bsun(day)?\b/i, "Sunday"],
+]
+const NEGATION = /\b(tidak|tdk|belum|blm|bukan|jangan|jgn|gak|nggak|ngga|enggak|gk|ga|tak)\b/i
+/** "ga jadi" (changed my mind) and "tidak apa-apa" (it's fine) carry no "not" in English. */
+const IDIOM = /\b(ga|gak|nggak|ngga|enggak|tidak|tdk|gk)\s+(jadi|apa-apa|apa2|papa|masalah)\b/gi
+const NOT = /\b(not|no|never|none|nothing|nobody|cannot|without|neither|nor|unavailable|longer)\b|n['’]t\b/i
+/** "jam 7 malam" is 7 pm and "jam 9 pagi" is 9 am: a gloss must not turn one into the other. */
+const HOUR = /\bjam\s+(\d{1,2})(?:[.:]\d{2})?\s+(pagi|siang|sore|malam)\b/gi
+const AM = String.raw`(am|a\.m\.)`
+const PM = String.raw`(pm|p\.m\.)`
 
 function indonesianLeft(gloss: string): string | null {
   return (STRICT.exec(gloss) ?? LOWER.exec(gloss) ?? NYA.exec(gloss))?.[0] ?? null
@@ -74,16 +102,33 @@ export function amounts(text: string): string[] {
   return out
 }
 
-/** Names a gloss must keep when its line has them: the agent, each lead (full and first name), and
- * the places the listings are known by. */
+/** Names a gloss must keep when its line has them: the agent, each lead and each person a booking
+ * is for (full and first name), and the places the listings are known by. */
 export function names(dataset: Dataset): string[] {
   const out = new Set<string>([dataset.world.agent, "Cluster Anggrek", "Serpong Garden", "BSD", "Kemang"])
   for (const s of dataset.scenarios) {
-    out.add(s.lead)
-    const first = s.lead.split(" ")[0]
-    if (first) out.add(first)
+    for (const person of [s.lead, ...[...s.expect.book, ...s.taken, ...s.bookings].map((b) => b.attendee)]) {
+      out.add(person)
+      const first = person.split(" ")[0]
+      if (first) out.add(first)
+    }
   }
   return [...out].sort((a, b) => b.length - a.length)
+}
+
+/** What a gloss gets wrong about days, negation and the time of day, which numbers alone miss. */
+function meaningProblems(line: string, gloss: string): string[] {
+  const found: string[] = []
+  for (const [said, meant, day] of DAYS) if (said.test(line) && !meant.test(gloss)) found.push(`${day} is missing`)
+  if (NEGATION.test(line.replace(IDIOM, " ")) && !NOT.test(gloss)) found.push("the line says not (belum, tidak…) and the gloss does not")
+  for (const [, hour = "", part = ""] of line.matchAll(HOUR)) {
+    const h = Number(hour)
+    const when = part.toLowerCase()
+    // jam 10 or 11 siang may be am; any other siang, sore or malam hour is pm; pagi is am
+    const wrong = when === "pagi" ? PM : when === "siang" && h >= 10 ? null : AM
+    if (wrong && new RegExp(String.raw`\b${h}\s?${wrong}(?!\w)`, "i").test(gloss)) found.push(`jam ${hour} ${part} turned into the wrong half of the day`)
+  }
+  return found
 }
 
 function jsonProblem(line: string, gloss: string): string | null {
@@ -134,6 +179,7 @@ export function problems(line: string, gloss: string | null, keep: string[]): st
     found.push("the gloss has a stray quote mark")
   }
   if (breaks(line) !== breaks(gloss)) found.push(`the gloss has ${breaks(gloss)} line breaks, the line ${breaks(line)}`)
+  found.push(...meaningProblems(line, gloss))
   const shape = jsonProblem(line, gloss)
   if (shape) found.push(shape)
   const [low, high] = line.length >= 80 ? [0.65, 2.0] : [0.4, 2.5]

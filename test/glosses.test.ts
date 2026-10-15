@@ -39,11 +39,34 @@ describe("the English glosses", () => {
     // s11: a tentative yes, not a booking request
     const tentative = dataset.scenarios.find((s) => s.id === "s11")?.chat.at(-1)?.[1] ?? ""
     assert.match(english(tentative), /let you know|get back to you/)
-    // the untrue replies quoted on the page: "belum tersedia" and "penuh"
-    assert.match(english("Sabtu jam 14.00 belum tersedia"), /(not|n['’]t) available/)
-    for (const quote of quotes.filter((q) => /\bpenuh\b/.test(q))) assert.match(english(quote), /full|booked/)
-    // every reply that claims the lead's number was deleted says so in English
-    for (const quote of quotes.filter((q) => /hapus/.test(q))) assert.match(english(quote), /delet|remov/)
+    // "siang" on its own is around midday (11:00 counts), never "afternoon"; "2 siang" is a clock time
+    for (const line of Object.keys(glosses).filter((l) => /\bsiang\b/.test(l) && !/\b\d{1,2} siang\b/.test(l))) {
+      assert.match(english(line), /midday/, line)
+    }
+    // s09: the price question is passed to Dimas; no gloss has the agent say the price is negotiable
+    for (const [line, gloss] of Object.entries(glosses)) {
+      if (/nego/.test(line) && gloss) assert.doesNotMatch(gloss, /(^|[.!?]\s+)(the )?price (can be negotiated|is negotiable)/i, line)
+    }
+  })
+
+  it("say in English what each untrue reply the page marks said", () => {
+    // the replies the page shows, with the reading the review gave each one
+    const meant: [RegExp, RegExp][] = [
+      [/belum tersedia/, /(not|n['’]t) available/],
+      [/hapus/, /delet|remov/],
+      [/penuh/, /full/],
+      [/[Yy]ang masih kosong/, /only|still free/],
+      [/slot siang/, /midday/],
+      [/belum ada slot kosong/, /no .*(free|available|open)|nothing/],
+    ]
+    const models = ["gpt-6-luna", "gemini-3.8-flash"]
+    for (const u of read<{ replies: { model: string; scenario: string; run: number; quote: string }[] }>("review/2026-10-15.json").replies) {
+      const reply = results[models.indexOf(u.model)]?.find((r) => r.scenario === u.scenario && r.run === u.run)?.reply ?? ""
+      assert.ok(reply.replace(/\*\*/g, "").includes(u.quote), `${u.scenario} ${u.model} ${u.run}: the quote is in the reply`)
+      const reading = meant.find(([said]) => said.test(u.quote))
+      assert.ok(reading, `no reading for "${u.quote}"`)
+      assert.match(english(reply), reading[1], `${u.scenario} ${u.model} ${u.run}`)
+    }
   })
 
   it("edited by hand say why, and still pass", () => {
@@ -66,6 +89,11 @@ describe("the gloss checks", () => {
     ["Is Saturday 4 pm free?", "Is Saturday 4 pm free?", "it needs no gloss"],
     ["aku lihat2 dulu ya kak", "I'll look around2 first.", "a repeated word written with 2"],
     ["Jadwal:\n- Sabtu 09.00\n- Sabtu 14.00", "Times: Saturday 09:00, Saturday 14:00", "line breaks"],
+    ["Kak Jumat jam 7 malam bisa lihat rumahnya?", "Can I see the house on Friday at 7 am?", "wrong half of the day"],
+    ["Kak Sabtu jam 3 sore bisa lihat?", "Can I view it on Sunday at 3 pm?", "Saturday is missing"],
+    ["Sabtu jam 14.00 belum tersedia", "Saturday at 14.00 is available", "the gloss does not"],
+    ["Untuk pertanyaan nego, Mas Dimas akan membalas.", "Mas Dimas will reply about the negotiation.", "'Mas'"],
+    ["Halo Bu Lina!", null, "the line is Indonesian but has no gloss"],
   ]
   for (const [line, gloss, problem] of wrong) {
     it(`catch: ${problem}`, () => {
@@ -80,6 +108,10 @@ describe("the gloss checks", () => {
     ["Besok jam 2 siang bisa lihat yang di Cluster Anggrek kak?", "Can I see the one in Cluster Anggrek tomorrow at 2 pm?"],
     ["Kirim ke Dan ya kak", "Send it to Dan, please."],
     ["Is Saturday 4 pm free?", null],
+    ["Hi Dan, could I come at 4pm?", null],
+    ["Ga jadi kak, saya udah dapet rumah lain.", "I changed my mind. I've already found another house."],
+    ["Kamis 1 November kosong?", "Is Thursday, 1 November free?"],
+    ["Harganya Rp 2,1 milyar ya kak", "The price is Rp 2.1 billion."],
   ]
   for (const [line, gloss] of right) {
     it(`pass: ${gloss}`, () => assert.deepEqual(problems(line, gloss, keep), []))

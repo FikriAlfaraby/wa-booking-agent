@@ -46,12 +46,14 @@ agent, gives it a calendar to act on, and checks what it did, not what it said.
   words: "booked Saturday 17 October, 09:00 for Budi Santoso, but Dewi Lestari is the one coming".
 - **Record once, score offline.** `scripts/record.ts` keeps every model turn; `scripts/score.ts`
   replays them through the same agent loop and calendar with no network.
-- **English for readers** (`data/glosses-en.json`): an English line for every Indonesian line the
-  replay shows. That covers the chats, every reply, the text the agent passed to tools, and the
-  quotes in the review. GPT-6 Luna wrote the English (`scripts/gloss.ts`), and
-  `test/glosses.test.ts` checks it. The check finds Indonesian left in the English, a number or
-  time that changed with its unit, and a lead's or listing's name that went missing. The lines a
-  finding rests on are pinned by hand. The agent never sees this file.
+- **English for readers** (`data/glosses-en.json`): an English line for every Indonesian line
+  that the replay on [fikrialfaraby.com/booking-agent](https://fikrialfaraby.com/booking-agent/)
+  shows: the chats, every reply, and the text the agent passed to tools. The quotes in the review
+  are covered too. GPT-6 Luna wrote the English (`scripts/gloss.ts`), and `test/glosses.test.ts`
+  checks it. The check finds Indonesian left in the English, and a number or a time that changed
+  with its unit. It also finds a missing weekday or name, a dropped "not", and a morning hour turned
+  into an evening one. It cannot catch every change of meaning, so the English of every untrue reply
+  the page marks is pinned by hand. The agent never sees this file.
 
 ## Results
 
